@@ -111,28 +111,27 @@ body {
 
 .next { right: 0; }
 
-/* Family Tree Styling */
+/* --- Interactive Tree Section --- */
 .tree-section {
-    padding: 80px 20px;
-    overflow-x: auto;
+    padding: 60px 0;
+    background-color: #fdfaf5;
+    overflow-x: auto; /* Allows side-scrolling on mobile */
 }
 
-.section-title {
-    text-align: center;
-    font-family: 'Cinzel', serif;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
+.tree {
+    display: flex;
+    justify-content: center;
 }
 
 .tree ul {
-    padding-top: 20px; position: relative;
+    padding-top: 20px; 
+    position: relative;
     transition: all 0.5s;
     display: flex;
     justify-content: center;
 }
 
 .tree li {
-    float: left; text-align: center;
     list-style-type: none;
     position: relative;
     padding: 20px 5px 0 5px;
@@ -143,64 +142,94 @@ body {
 .tree li::before, .tree li::after {
     content: '';
     position: absolute; top: 0; right: 50%;
-    border-top: 2px solid var(--light-gold);
+    border-top: 2px solid #d4bc8e;
     width: 50%; height: 20px;
 }
 .tree li::after {
     right: auto; left: 50%;
-    border-left: 2px solid var(--light-gold);
+    border-left: 2px solid #d4bc8e;
 }
 
 .tree li:only-child::after, .tree li:only-child::before { display: none; }
 .tree li:only-child { padding-top: 0; }
 .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
-.tree li:last-child::before { border-right: 2px solid var(--light-gold); border-radius: 0 5px 0 0; }
+.tree li:last-child::before { border-right: 2px solid #d4bc8e; border-radius: 0 5px 0 0; }
 .tree li:first-child::after { border-radius: 5px 0 0 0; }
 
 .tree ul ul::before {
     content: '';
     position: absolute; top: 0; left: 50%;
-    border-left: 2px solid var(--light-gold);
+    border-left: 2px solid #d4bc8e;
     width: 0; height: 20px;
 }
 
-.tree li a {
-    border: 2px solid var(--light-gold);
-    padding: 10px 15px;
+/* Node Styling */
+.node {
+    border: 2px solid #d4bc8e;
+    padding: 12px 18px;
     text-decoration: none;
-    color: var(--dark);
+    color: #4a3f35;
     font-size: 13px;
     display: inline-block;
-    border-radius: 8px;
+    border-radius: 5px;
     background: white;
-    transition: 0.3s;
+    position: relative;
+    min-width: 120px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.tree li a:hover {
-    background: var(--gold);
+.clickable {
+    cursor: pointer;
+    background-color: #fff;
+    border-color: #b2945e;
+    font-weight: 600;
+}
+
+.clickable:hover {
+    background-color: #f3e5ab;
+    transform: translateY(-2px);
+}
+
+/* Indicator for clickable nodes */
+.clickable::after {
+    content: ' +';
+    font-size: 14px;
+    color: #b2945e;
+}
+
+.clickable.expanded::after {
+    content: ' −';
+}
+
+/* Root Node Specifics */
+.root-node {
+    background: #b2945e;
     color: white;
+    font-size: 16px;
+    border: none;
 }
 
-/* Special Member Styling */
+/* Deceased Styling */
 .deceased {
-    background: #f0f0f0 !important;
-    color: #999 !important;
-    border-style: dashed !important;
+    background: #eeeeee;
+    color: #999;
+    border-style: dashed;
+}
+
+/* Hidden Branches Logic */
+.nested {
+    display: none; /* Hide by default */
+}
+
+.nested.active {
+    display: flex; /* Show when active */
 }
 
 .missing-info {
-    color: #b2945e;
     font-style: italic;
-    opacity: 0.6;
-}
-
-.root-node {
-    background: var(--gold) !important;
-    color: white !important;
-    font-size: 18px !important;
-}
-
-footer {
+    opacity: 0.5;
+    background: #fafafa;
+}footer {
     text-align: center;
     padding: 40px;
     background: var(--dark);
