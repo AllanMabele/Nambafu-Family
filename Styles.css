@@ -1,0 +1,214 @@
+/* General Styles */
+:root {
+    --gold: #b2945e;
+    --cream: #f9f6f0;
+    --dark: #4a3f35;
+    --light-gold: #d4bc8e;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cream);
+    color: var(--dark);
+    scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: radial-gradient(circle, #fffbeb 0%, #f3e5ab 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-title {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    letter-spacing: 8px;
+    margin-bottom: 0;
+    color: var(--dark);
+}
+
+.subtitle {
+    letter-spacing: 5px;
+    font-weight: 300;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.grandma-frame {
+    width: 350px;
+    height: 350px;
+    margin: 40px auto;
+    border: 8px solid white;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15), 0 0 0 15px rgba(178, 148, 94, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.center-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Navigation */
+.nav-bar {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.nav-bar a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Slider Section */
+.slider-section {
+    padding: 80px 20px;
+    background: white;
+}
+
+.slider-container {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.slide img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.next { right: 0; }
+
+/* Family Tree Styling */
+.tree-section {
+    padding: 80px 20px;
+    overflow-x: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.tree ul {
+    padding-top: 20px; position: relative;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+}
+
+.tree li {
+    float: left; text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    transition: all 0.5s;
+}
+
+/* Connectors */
+.tree li::before, .tree li::after {
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-top: 2px solid var(--light-gold);
+    width: 50%; height: 20px;
+}
+.tree li::after {
+    right: auto; left: 50%;
+    border-left: 2px solid var(--light-gold);
+}
+
+.tree li:only-child::after, .tree li:only-child::before { display: none; }
+.tree li:only-child { padding-top: 0; }
+.tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+.tree li:last-child::before { border-right: 2px solid var(--light-gold); border-radius: 0 5px 0 0; }
+.tree li:first-child::after { border-radius: 5px 0 0 0; }
+
+.tree ul ul::before {
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 2px solid var(--light-gold);
+    width: 0; height: 20px;
+}
+
+.tree li a {
+    border: 2px solid var(--light-gold);
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 13px;
+    display: inline-block;
+    border-radius: 8px;
+    background: white;
+    transition: 0.3s;
+}
+
+.tree li a:hover {
+    background: var(--gold);
+    color: white;
+}
+
+/* Special Member Styling */
+.deceased {
+    background: #f0f0f0 !important;
+    color: #999 !important;
+    border-style: dashed !important;
+}
+
+.missing-info {
+    color: #b2945e;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.root-node {
+    background: var(--gold) !important;
+    color: white !important;
+    font-size: 18px !important;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: var(--dark);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-title { font-size: 2.5rem; }
+    .grandma-frame { width: 250px; height: 250px; }
+}

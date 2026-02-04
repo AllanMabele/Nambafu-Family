@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diana's Family - United by One Blood</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1 class="main-title">DIANA'S FAMILY</h1>
+            <p class="subtitle">UNITED BY ONE BLOOD</p>
+            <div class="grandma-frame">
+                <!-- Replace 'grandma.jpg' with your actual image file name -->
+                <img src="grandma.jpg" alt="Diana Nambafu" class="center-photo">
+            </div>
+            <div class="head-of-family">
+                <h2>Samson & Diana Nambafu</h2>
+                <p>Heads of Family</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <a href="#tree">The Family Tree</a>
+        <a href="#gallery">Memory Gallery</a>
+    </nav>
+
+    <!-- Photo Slider Section -->
+    <section id="gallery" class="slider-section">
+        <h2 class="section-title">Family Memories</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <!-- Placeholders for family photos -->
+                <div class="slide"><img src="https://via.placeholder.com/800x400?text=Family+Moment+1" alt="Family 1"></div>
+                <div class="slide"><img src="https://via.placeholder.com/800x400?text=Family+Moment+2" alt="Family 2"></div>
+                <div class="slide"><img src="https://via.placeholder.com/800x400?text=Family+Moment+3" alt="Family 3"></div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Family Tree Section -->
+    <section id="tree" class="tree-section">
+        <h2 class="section-title">The Lineage</h2>
+        
+        <div class="tree">
+            <ul>
+                <li>
+                    <a href="#" class="root-node">
+                        <strong>Samson & Diana</strong><br>
+                        <span>Grandparents</span>
+                    </a>
+                    <ul>
+                        <!-- Deceased Sons -->
+                        <li><a href="#" class="deceased">Son 1 (Deceased)</a></li>
+                        <li><a href="#" class="deceased">Son 2 (Deceased)</a></li>
+                        <li><a href="#" class="deceased">Son 3 (Deceased)</a></li>
+                        <li><a href="#" class="deceased">Son 4 (Deceased)</a></li>
+
+                        <!-- Sammy Mabele's Branch -->
+                        <li>
+                            <a href="#"><strong>Sammy Mabele</strong><br>6 Children</a>
+                            <ul>
+                                <li><a href="#">Cristine Nabalyo</a></li>
+                                <li><a href="#">Allan Nambafu</a></li>
+                                <li><a href="#">Moran Nambafu</a></li>
+                                <li><a href="#">Owen Nambafu</a></li>
+                                <li><a href="#">Mercy Ndenu</a></li>
+                                <li><a href="#" class="missing-info">[Add Name]</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Joseck Mukui's Branch -->
+                        <li>
+                            <a href="#"><strong>Joseck Mukui</strong><br>10 Children</a>
+                            <ul>
+                                <li><a href="#">Cyprian Wanyama</a></li>
+                                <li><a href="#">Maureen Namalwa</a></li>
+                                <li><a href="#">Pamela Mukui</a></li>
+                                <li><a href="#">Jacquiline Mukui</a></li>
+                                <li><a href="#">Coleta Mukui</a></li>
+                                <li><a href="#" class="missing-info">View All 10...</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Daughters & Other Sons -->
+                        <li><a href="#">Wycliffe Nambafu</a></li>
+                        <li><a href="#">Ruth Nandutu</a></li>
+                        <li><a href="#">Felisters Musuya</a></li>
+                        <li><a href="#">Judith Mukoya</a></li>
+                        <li><a href="#">Dorcas Nafula</a></li>
+                        <li><a href="#">Emily Nanjala</a></li>
+                        <li><a href="#">Dipina Manakhe</a></li>
+                        <li><a href="#">Catherine Mutua</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Diana's Family Tree | United by One Blood</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function moveSlide(n) {
+            slideIndex += n;
+            showSlides();
+        }
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (slideIndex >= slides.length) {slideIndex = 0}
+            if (slideIndex < 0) {slideIndex = slides.length - 1}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+        
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            slideIndex++;
+            showSlides();
+        }, 5000);
+    </script>
+</body>
+</html>
