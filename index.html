@@ -11,316 +11,260 @@
 
     <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-overlay">
+        <div class="hero-content">
             <h1 class="main-title">DIANA'S FAMILY</h1>
             <p class="subtitle">UNITED BY ONE BLOOD</p>
             <div class="grandma-frame">
-                <!-- Replace 'grandma.jpg' with your actual image file name -->
-                <img src="grandma.jpg" alt="Diana Nambafu" class="center-photo">
+                <!-- Using grandma1.jpg as the main profile photo -->
+                <img src="grandma1.jpg" alt="Diana Nambafu" class="center-photo">
             </div>
             <div class="head-of-family">
                 <h2>Samson & Diana Nambafu</h2>
-                <p>Heads of Family</p>
+                <span class="badge">Heads of Family</span>
             </div>
         </div>
     </header>
 
     <!-- Navigation -->
     <nav class="nav-bar">
-        <a href="#tree">The Family Tree</a>
-        <a href="#gallery">Memory Gallery</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#tree">The Lineage</a>
     </nav>
 
     <!-- Photo Slider Section -->
-    <section id="gallery" class="slider-section">
+    <section id="gallery" class="gallery-section">
         <h2 class="section-title">Family Memories</h2>
-        <div class="slider-container">
-            <div class="slider">
-                <!-- Placeholders for family photos -->
-                <div class="slide"><img src="grandma1.jpg" alt="Family Memory 1"></div>
-                <div class="slide"><img src="grandma2.jpg" alt="Family Memory 2"></div>
-                <div class="slide"><img src="grandma3.jpg" alt="Family Memory 3"></div>
-                <div class="slide"><img src="grandma4.jpg" alt="Family Memory 4"></div>
-                <div class="slide"><img src="grandma5.jpg" alt="Family Memory 5"></div>
-                <div class="slide"><img src="grandma6.jpg" alt="Family Memory 6"></div>
-                <div class="slide"><img src="grandma7.jpg" alt="Family Memory 7"></div>
-                <div class="slide"><img src="grandma8.jpg" alt="Family Memory 8"></div>
-              </div>
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        <div class="slider-wrapper">
+            <div class="slider-container">
+                <div class="slide"><img src="grandma1.jpg" alt="Memory 1"></div>
+                <div class="slide"><img src="grandma2.jpg" alt="Memory 2"></div>
+                <div class="slide"><img src="grandma3.jpg" alt="Memory 3"></div>
+                <div class="slide"><img src="grandma4.jpg" alt="Memory 4"></div>
+                <div class="slide"><img src="grandma5.jpg" alt="Memory 5"></div>
+                <div class="slide"><img src="grandma6.jpg" alt="Memory 6"></div>
+                <div class="slide"><img src="grandma7.jpg" alt="Memory 7"></div>
+                <div class="slide"><img src="grandma8.jpg" alt="Memory 8"></div>
+            </div>
+            <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
         </div>
     </section>
 
-    <!-- Family Tree Section -->
-<section id="tree" class="tree-section">
-    <h2 class="section-title">The Lineage</h2>
-    <p style="text-align:center; color: #b2945e; margin-bottom: 20px;">(Click on a name to reveal their children)</p>
-    
-    <div class="tree">
-        <ul>
-            <li>
-                <div class="node root-node">
-                    <strong>Samson & Diana</strong><br>
-                    <span>Grandparents</span>
-                </div>
-                <ul>
-                    <!-- Deceased Sons -->
-                    <li><div class="node deceased">Son 1 (Deceased)</div></li>
-                    <li><div class="node deceased">Son 2 (Deceased)</div></li>
-                    <li><div class="node deceased">Son 3 (Deceased)</div></li>
-                    <li><div class="node deceased">Son 4 (Deceased)</div></li>
+    <!-- Vertical Family Tree Section -->
+    <section id="tree" class="tree-section">
+        <h2 class="section-title">The Lineage</h2>
+        <p class="instruction">Tap a name to reveal the next generation</p>
+        
+        <div class="vertical-tree">
+            <ul>
+                <li>
+                    <div class="v-node root">
+                        <strong>Samson & Diana</strong>
+                        <small>Grandparents</small>
+                    </div>
+                    
+                    <ul class="v-children">
+                        <!-- Deceased Branch -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)">The Late Sons <span class="count">4</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node deceased">Son 1</div></li>
+                                <li><div class="v-node deceased">Son 2</div></li>
+                                <li><div class="v-node deceased">Son 3</div></li>
+                                <li><div class="v-node deceased">Son 4</div></li>
+                            </ul>
+                        </li>
 
-                    <!-- Sammy Mabele's Branch -->
-                    <li class="parent">
-                        <div class="node clickable" onclick="toggleBranch(this)">
-                            <strong>Sammy Mabele</strong><br>6 Children
-                        </div>
-                        <ul class="nested">
-                            <li class="parent">
-                                <div class="node clickable" onclick="toggleBranch(this)">Cristine Nabalyo</div>
-                                <ul class="nested">
-                                    <li><div class="node">Cecilia</div></li>
-                                    <li><div class="node">Douglas</div></li>
-                                    <li><div class="node">Brian</div></li>
-                                    <li><div class="node missing-info">GGC 4</div></li>
-                                    <li><div class="node missing-info">GGC 5</div></li>
-                                    <li><div class="node missing-info">GGC 6</div></li>
-                                    <li><div class="node missing-info">GGC 7</div></li>
-                                    <li><div class="node missing-info">GGC 8</div></li>
-                                </ul>
-                            </li>
-                            <li class="parent">
-                                <div class="node clickable" onclick="toggleBranch(this)">Allan Nambafu</div>
-                                <ul class="nested">
-                                    <li><div class="node">Dylan Nambafu</div></li>
-                                    <li><div class="node missing-info">GGC 12</div></li>
-                                    <li><div class="node missing-info">GGC 13</div></li>
-                                </ul>
-                            </li>
-                            <li class="parent">
-                                <div class="node clickable" onclick="toggleBranch(this)">Moran Nambafu</div>
-                                <ul class="nested">
-                                    <li><div class="node missing-info">GGC 15</div></li>
-                                </ul>
-                            </li>
-                            <li><div class="node">Owen Nambafu</div></li>
-                            <li><div class="node">Mercy Ndenu</div></li>
-                            <li><div class="node missing-info">[Input Grandchild Name]</div></li>
-                        </ul>
-                    </li>
+                        <!-- Sammy Mabele -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)">Sammy Mabele <span class="count">6</span></div>
+                            <ul class="v-nested">
+                                <li class="has-children">
+                                    <div class="v-node clickable sub" onclick="toggleVertical(this)">Cristine Nabalyo</div>
+                                    <ul class="v-nested">
+                                        <li><div class="v-node ggc">Cecilia</div></li>
+                                        <li><div class="v-node ggc">Douglas</div></li>
+                                        <li><div class="v-node ggc">Brian</div></li>
+                                        <li><div class="v-node missing">GGC 4-8</div></li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <div class="v-node clickable sub" onclick="toggleVertical(this)">Allan Nambafu</div>
+                                    <ul class="v-nested">
+                                        <li><div class="v-node ggc">Dylan Nambafu</div></li>
+                                        <li><div class="v-node missing">GGC 12-13</div></li>
+                                    </ul>
+                                </li>
+                                <li><div class="v-node">Moran Nambafu</div></li>
+                                <li><div class="v-node">Owen Nambafu</div></li>
+                                <li><div class="v-node">Mercy Ndenu</div></li>
+                                <li><div class="v-node missing">Grandchild 6</div></li>
+                            </ul>
+                        </li>
 
-                    <!-- Joseck Mukui's Branch -->
-                    <li class="parent">
-                        <div class="node clickable" onclick="toggleBranch(this)">
-                            <strong>Joseck Mukui</strong><br>10 Children
-                        </div>
-                        <ul class="nested">
-                            <li class="parent">
-                                <div class="node clickable" onclick="toggleBranch(this)">Cyprian Wanyama</div>
-                                <ul class="nested">
-                                    <li><div class="node">GGC 20</div></li>
-                                    <li><div class="node">GGC 21</div></li>
-                                    <li><div class="node">GGC 22</div></li>
-                                    <li><div class="node">GGC 23</div></li>
-                                </ul>
-                            </li>
-                            <li class="parent">
-                                <div class="node clickable" onclick="toggleBranch(this)">Maureen Namalwa</div>
-                                <ul class="nested">
-                                    <li><div class="node">GGC 25</div></li>
-                                    <li><div class="node">GGC 26</div></li>
-                                    <li><div class="node">GGC 27</div></li>
-                                    <li><div class="node">GGC 28</div></li>
-                                    <li><div class="node">GGC 29</div></li>
-                                </ul>
-                            </li>
-                            <li class="parent">
-                                <div class="node clickable" onclick="toggleBranch(this)">Pamela Mukui</div>
-                                <ul class="nested">
-                                    <li><div class="node">GGC 32</div></li>
-                                    <li><div class="node">GGC 33</div></li>
-                                    <li><div class="node">GGC 34</div></li>
-                                    <li><div class="node">GGC 35</div></li>
-                                </ul>
-                            </li>
-                            <li class="parent">
-                                <div class="node clickable" onclick="toggleBranch(this)">Jacquiline Mukui</div>
-                                <ul class="nested">
-                                    <li><div class="node">GGC 37</div></li>
-                                    <li><div class="node">GGC 38</div></li>
-                                    <li><div class="node">GGC 39</div></li>
-                                    <li><div class="node">GGC 40</div></li>
-                                </ul>
-                            </li>
-                            <li><div class="node">Coleta Mukui</div></li>
-                            <li><div class="node">Derick Mukui</div></li>
-                            <li><div class="node">Vivian Mukui</div></li>
-                            <li><div class="node">Nora Mukui</div></li>
-                            <li><div class="node missing-info">Grandchild 9</div></li>
-                            <li><div class="node missing-info">Grandchild 10</div></li>
-                        </ul>
-                    </li>
+                        <!-- Joseck Mukui -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)">Joseck Mukui <span class="count">10</span></div>
+                            <ul class="v-nested">
+                                <li class="has-children"><div class="v-node clickable sub" onclick="toggleVertical(this)">Cyprian Wanyama</div><ul class="v-nested"><li><div class="v-node ggc">GGC 20-23</div></li></ul></li>
+                                <li class="has-children"><div class="v-node clickable sub" onclick="toggleVertical(this)">Maureen Namalwa</div><ul class="v-nested"><li><div class="v-node ggc">GGC 25-29</div></li></ul></li>
+                                <li class="has-children"><div class="v-node clickable sub" onclick="toggleVertical(this)">Pamela Mukui</div><ul class="v-nested"><li><div class="v-node ggc">GGC 32-35</div></li></ul></li>
+                                <li class="has-children"><div class="v-node clickable sub" onclick="toggleVertical(this)">Jacquiline Mukui</div><ul class="v-nested"><li><div class="v-node ggc">GGC 37-40</div></li></ul></li>
+                                <li><div class="v-node">Coleta Mukui</div></li>
+                                <li><div class="v-node">Derick Mukui</div></li>
+                                <li><div class="v-node">Vivian Mukui</div></li>
+                                <li><div class="v-node">Nora Mukui</div></li>
+                                <li><div class="v-node missing">Grandchild 9-10</div></li>
+                            </ul>
+                        </li>
 
-                    <!-- Wycliffe Nambafu -->
-                    <li class="parent">
-                        <div class="node clickable" onclick="toggleBranch(this)"><strong>Wycliffe Nambafu</strong></div>
-                        <ul class="nested">
-                            <li><div class="node">Betwel Wamalwa</div></li>
-                            <li><div class="node">Betel Wamalwa</div></li>
-                            <li><div class="node">Wayne Wamalwa</div></li>
-                            <li><div class="node">Zet Wamalwa</div></li>
-                            <li><div class="node">Keit Wamalwa</div></li>
-                        </ul>
-                    </li>
+                        <!-- Wycliffe Nambafu -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)">Wycliffe Nambafu <span class="count">5</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node">Betwel Wamalwa</div></li>
+                                <li><div class="v-node">Betel Wamalwa</div></li>
+                                <li><div class="v-node">Wayne Wamalwa</div></li>
+                                <li><div class="v-node">Zet Wamalwa</div></li>
+                                <li><div class="v-node">Keit Wamalwa</div></li>
+                            </ul>
+                        </li>
 
-                    <!-- Ruth Nandutu -->
-                    <li class="parent">
-                        <div class="node clickable" onclick="toggleBranch(this)"><strong>Ruth Nandutu</strong></div>
-                        <ul class="nested">
-                            <li><div class="node">Shila Makokha</div></li>
-                            <li><div class="node">Erick Makokha</div></li>
-                            <li><div class="node">Faustine Makokha</div></li>
-                            <li><div class="node">Jesca Makokha</div></li>
-                            <li><div class="node">Gdfrey Makokha</div></li>
-                            <li><div class="node">Anna Makokha</div></li>
-                            <li><div class="node">Diana Makokha</div></li>
-                        </ul>
-                    </li>
+                        <!-- Ruth Nandutu -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)">Ruth Nandutu <span class="count">7</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node">Shila Makokha</div></li>
+                                <li><div class="v-node">Erick Makokha</div></li>
+                                <li><div class="v-node">Faustine Makokha</div></li>
+                                <li><div class="v-node">Jesca Makokha</div></li>
+                                <li><div class="v-node">Gdfrey Makokha</div></li>
+                                <li><div class="v-node">Anna Makokha</div></li>
+                                <li><div class="v-node">Diana Makokha</div></li>
+                            </ul>
+                        </li>
 
-                    <!-- Felisters Musuya -->
-                    <li class="parent">
-                        <div class="node clickable" onclick="toggleBranch(this)"><strong>Felisters Musuya</strong></div>
-                        <ul class="nested">
-                            <li><div class="node">Lilian Munoko</div></li>
-                            <li><div class="node">Lucy Munoko</div></li>
-                            <li><div class="node">Linnet Munoko</div></li>
-                            <li><div class="node">Victor Munoko</div></li>
-                            <li><div class="node">Linda Munoko</div></li>
-                        </ul>
-                    </li>
+                        <!-- Felisters Musuya -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)">Felisters Musuya <span class="count">5</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node">Lilian Munoko</div></li>
+                                <li><div class="v-node">Lucy Munoko</div></li>
+                                <li><div class="v-node">Linnet Munoko</div></li>
+                                <li><div class="v-node">Victor Munoko</div></li>
+                                <li><div class="v-node">Linda Munoko</div></li>
+                            </ul>
+                        </li>
 
-                    <!-- Judith Mukoya -->
-                    <li class="parent">
-                        <div class="node clickable" onclick="toggleBranch(this)"><strong>Judith Mukoya</strong></div>
-                        <ul class="nested">
-                            <li><div class="node">Cristine Namarome</div></li>
-                            <li><div class="node">Isaac Wasike</div></li>
-                            <li><div class="node">Kennedy Wafula</div></li>
-                            <li><div class="node">Silas Wafula</div></li>
-                            <li><div class="node">Susan Wafula</div></li>
-                        </ul>
-                    </li>
+                        <!-- Judith Mukoya -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)">Judith Mukoya <span class="count">5</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node">Cristine Namarome</div></li>
+                                <li><div class="v-node">Isaac Wasike</div></li>
+                                <li><div class="v-node">Kennedy Wafula</div></li>
+                                <li><div class="v-node">Silas Wafula</div></li>
+                                <li><div class="v-node">Susan Wafula</div></li>
+                            </ul>
+                        </li>
 
-                    <!-- Dorcas Nafula -->
-                    <li class="parent">
-                        <div class="node clickable" onclick="toggleBranch(this)"><strong>Dorcas Nafula</strong></div>
-                        <ul class="nested">
-                            <li><div class="node">Abby Mutekhele</div></li>
-                            <li><div class="node">Fidelis Mutekhele</div></li>
-                            <li><div class="node">Serapine Mutekhele</div></li>
-                            <li><div class="node">Nancy Mutekhele</div></li>
-                            <li><div class="node">Maret Mutekhele</div></li>
-                        </ul>
-                    </li>
+                        <!-- Dorcas Nafula -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)">Dorcas Nafula <span class="count">5</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node">Abby Mutekhele</div></li>
+                                <li><div class="v-node">Fidelis Mutekhele</div></li>
+                                <li><div class="v-node">Serapine Mutekhele</div></li>
+                                <li><div class="v-node">Nancy Mutekhele</div></li>
+                                <li><div class="v-node">Maret Mutekhele</div></li>
+                            </ul>
+                        </li>
 
-                    <!-- Emily Nanjala -->
-                    <li class="parent">
-                        <div class="node clickable" onclick="toggleBranch(this)"><strong>Emily Nanjala</strong></div>
-                        <ul class="nested">
-                            <li><div class="node">Brian Sichangi</div></li>
-                            <li><div class="node">Bramwel Sichangi</div></li>
-                            <li><div class="node">Abiud Sichangi</div></li>
-                            <li><div class="node">Lucas Wasike</div></li>
-                            <li><div class="node">Josep Sichangi</div></li>
-                            <li><div class="node">Diana Sichangi</div></li>
-                            <li><div class="node missing-info">GC 7</div></li>
-                            <li><div class="node missing-info">GC 8</div></li>
-                            <li><div class="node missing-info">GC 9</div></li>
-                            <li><div class="node missing-info">GC 10</div></li>
-                            <li><div class="node missing-info">GC 11</div></li>
-                            <li><div class="node missing-info">GC 12</div></li>
-                        </ul>
-                    </li>
+                        <!-- Emily Nanjala -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)">Emily Nanjala <span class="count">12</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node">Brian Sichangi</div></li>
+                                <li><div class="v-node">Bramwel Sichangi</div></li>
+                                <li><div class="v-node">Abiud Sichangi</div></li>
+                                <li><div class="v-node">Lucas Wasike</div></li>
+                                <li><div class="v-node">Josep Sichangi</div></li>
+                                <li><div class="v-node">Diana Sichangi</div></li>
+                                <li><div class="v-node missing">GC 7-12</div></li>
+                            </ul>
+                        </li>
 
-                    <!-- Dipina Manakhe -->
-                    <li class="parent">
-                        <div class="node clickable" onclick="toggleBranch(this)"><strong>Dipina Manakhe</strong></div>
-                        <ul class="nested">
-                            <li><div class="node">Annet Wakaanya</div></li>
-                            <li><div class="node">Vyona</div></li>
-                            <li><div class="node">Ivvon</div></li>
-                            <li><div class="node">Susan</div></li>
-                            <li><div class="node">Vallary</div></li>
-                            <li><div class="node">Diana</div></li>
-                            <li><div class="node missing-info">GC 7</div></li>
-                            <li><div class="node missing-info">GC 8</div></li>
-                            <li><div class="node missing-info">GC 9</div></li>
-                        </ul>
-                    </li>
+                        <!-- Dipina Manakhe -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)">Dipina Manakhe <span class="count">9</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node">Annet Wakaanya</div></li>
+                                <li><div class="v-node">Vyona</div></li>
+                                <li><div class="v-node">Ivvon</div></li>
+                                <li><div class="v-node">Susan</div></li>
+                                <li><div class="v-node">Vallary</div></li>
+                                <li><div class="v-node">Diana</div></li>
+                                <li><div class="v-node missing">GC 7-9</div></li>
+                            </ul>
+                        </li>
 
-                    <!-- Catherine Mutua -->
-                    <li class="parent">
-                        <div class="node clickable" onclick="toggleBranch(this)"><strong>Catherine Mutua</strong></div>
-                        <ul class="nested">
-                            <li><div class="node">Pascal Nabayukha</div></li>
-                            <li><div class="node">Victor Nabayukha</div></li>
-                            <li><div class="node">Brandon Nabayukha</div></li>
-                            <li><div class="node">Brian Nabayukha</div></li>
-                            <li><div class="node">Diana Nabayukha</div></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</section>
+                        <!-- Catherine Mutua -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)">Catherine Mutua <span class="count">5</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node">Pascal Nabayukha</div></li>
+                                <li><div class="v-node">Victor Nabayukha</div></li>
+                                <li><div class="v-node">Brandon Nabayukha</div></li>
+                                <li><div class="v-node">Brian Nabayukha</div></li>
+                                <li><div class="v-node">Diana Nabayukha</div></li>
+                            </ul>
+                        </li>
 
-<!-- Include this script at the very end of your HTML (before </body>) -->
-<script>
-function toggleBranch(element) {
-    const parentLi = element.parentElement;
-    const childList = parentLi.querySelector('.nested');
-    
-    if (childList) {
-        if (childList.classList.contains('active')) {
-            childList.classList.remove('active');
-            element.classList.remove('expanded');
-        } else {
-            childList.classList.add('active');
-            element.classList.add('expanded');
-        }
-    }
-}
-</script>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Diana's Family Tree | United by One Blood</p>
+        <p>&copy; 2024 Diana's Family Tree | Legacy of Love</p>
     </footer>
 
     <script>
+        // Tree Toggle Logic
+        function toggleVertical(element) {
+            const parentLi = element.parentElement;
+            const nestedUl = parentLi.querySelector('.v-nested');
+            if (nestedUl) {
+                nestedUl.classList.toggle('active');
+                element.classList.toggle('expanded');
+            }
+        }
+
+        // Slider Logic
         let slideIndex = 0;
-        showSlides();
+        const slides = document.getElementsByClassName("slide");
+        
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slides[i].classList.remove('fade');
+            }
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            
+            slides[slideIndex].style.display = "block";
+            slides[slideIndex].classList.add('fade');
+        }
 
         function moveSlide(n) {
             slideIndex += n;
             showSlides();
         }
 
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            if (slideIndex >= slides.length) {slideIndex = 0}
-            if (slideIndex < 0) {slideIndex = slides.length - 1}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
-        
-        // Auto slide every 5 seconds
-        setInterval(() => {
-            slideIndex++;
-            showSlides();
-        }, 5000);
+        // Auto initialization
+        showSlides();
+        setInterval(() => { slideIndex++; showSlides(); }, 5000);
     </script>
 </body>
 </html>
