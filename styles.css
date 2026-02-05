@@ -1,6 +1,6 @@
 :root {
     --gold: #b2945e;
-    --gold-gradient: linear-gradient(135deg, #b2945e 0%, #d4bc8e 100%);
+    --gold-grad: linear-gradient(135deg, #b2945e 0%, #d4bc8e 100%);
     --cream: #fdfaf5;
     --white: #ffffff;
     --dark: #2c241d;
@@ -8,6 +8,7 @@
 }
 
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
@@ -17,289 +18,139 @@ body {
     line-height: 1.6;
 }
 
-/* Hero Section - Professional & Responsive */
+/* Hero Section */
 .hero {
     min-height: 100vh;
     background: radial-gradient(circle at center, #ffffff 0%, #f3e5ab 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 40px 20px;
 }
 
 .main-title {
     font-family: 'Cinzel', serif;
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    letter-spacing: 10px;
-    margin: 0;
-    color: var(--dark);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+    font-size: clamp(2.2rem, 8vw, 4.2rem);
+    letter-spacing: 8px; margin: 0; color: var(--dark);
 }
 
 .subtitle {
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    font-weight: 300;
-    margin-bottom: 30px;
-    color: var(--gold);
+    letter-spacing: 4px; text-transform: uppercase;
+    font-weight: 300; margin-bottom: 30px; color: var(--gold);
 }
 
 .grandma-frame {
-    width: clamp(200px, 40vw, 380px);
-    height: clamp(200px, 40vw, 380px);
+    width: clamp(180px, 35vw, 350px);
+    height: clamp(180px, 35vw, 350px);
     margin: 30px auto;
-    border: 10px solid var(--white);
+    border: 8px solid var(--white);
     border-radius: 50%;
-    box-shadow: var(--shadow), 0 0 0 10px rgba(178, 148, 94, 0.1);
+    box-shadow: var(--shadow);
     overflow: hidden;
 }
 
-.center-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.center-photo { width: 100%; height: 100%; object-fit: cover; }
 
 .badge {
-    background: var(--gold-gradient);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
+    background: var(--gold-grad); color: white;
+    padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;
 }
 
 /* Navigation */
 .nav-bar {
-    position: sticky;
-    top: 0;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(5px);
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    z-index: 1000;
+    position: sticky; top: 0; background: white;
+    padding: 15px; text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000;
 }
 
 .nav-bar a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: var(--dark);
-    font-weight: 600;
-    transition: 0.3s;
+    margin: 0 15px; text-decoration: none;
+    color: var(--dark); font-weight: 600;
 }
 
-.nav-bar a:hover { color: var(--gold); }
-
-/* --- Professional Slider Section (No Cropping) --- */
-.gallery-section { 
-    padding: 60px 20px; 
-    background: var(--white); 
-}
-
+/* Slider Section - FULL VIEW FIX */
+.gallery-section { padding: 60px 20px; background: var(--white); }
 .slider-wrapper {
-    max-width: 1000px;
-    margin: auto;
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    background: #1a1612; /* Deep dark background makes photos pop */
+    max-width: 1000px; margin: auto; position: relative;
+    border-radius: 15px; overflow: hidden;
+    background: #111; box-shadow: var(--shadow);
 }
 
 .slider-container {
-    /* Instead of height: 500px, we use aspect-ratio */
     width: 100%;
-    aspect-ratio: 16 / 9; /* Professional widescreen ratio */
-    display: flex;
-    align-items: center;  /* Centers photo vertically */
-    justify-content: center; /* Centers photo horizontally */
+    aspect-ratio: 16 / 9; /* Professional frame */
+    display: flex; align-items: center; justify-content: center;
 }
 
-/* On smaller screens, make it a bit taller for mobile photos */
-@media (max-width: 768px) {
-    .slider-container {
-        aspect-ratio: 4 / 3; 
-    }
-}
-
-.slide {
-    width: 100%;
-    height: 100%;
-    display: none; /* Controlled by JS */
-}
-
+.slide { width: 100%; height: 100%; display: none; }
 .slide img {
-    width: 100%;
-    height: 100%;
-    /* 'contain' ensures the WHOLE photo is visible without cutting */
-    object-fit: contain; 
-    display: block;
+    width: 100%; height: 100%;
+    object-fit: contain; /* Shows full photo without cropping */
 }
 
 .slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    width: 45px;
-    height: 45px;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 10;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.9); border: none;
+    width: 40px; height: 40px; cursor: pointer;
+    border-radius: 50%; z-index: 10;
 }
+.prev { left: 10px; } .next { right: 10px; }
 
-.slider-btn:hover { 
-    background: var(--gold); 
-    color: white; 
-    transform: translateY(-50%) scale(1.1);
-}
+/* Vertical Tree */
+.tree-section { padding: 60px 20px; max-width: 700px; margin: auto; }
+.section-title { font-family: 'Cinzel', serif; text-align: center; }
+.instruction { text-align: center; color: var(--gold); margin-bottom: 30px; font-size: 0.9rem; }
 
-.prev { left: 15px; }
-.next { right: 15px; }
-
-/* Add a smooth fade animation */
-.fade {
-    animation: fadeEffect 0.8s;
-}
-
-@keyframes fadeEffect {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-}
-/* Vertical Tree - Modern & Clean */
-.tree-section { padding: 80px 20px; max-width: 800px; margin: auto; }
-.section-title { font-family: 'Cinzel', serif; text-align: center; font-size: 2.2rem; margin-bottom: 10px; }
-.instruction { text-align: center; color: var(--gold); font-style: italic; margin-bottom: 40px; }
-
-.vertical-tree ul {
-    list-style: none;
-    padding-left: 30px;
-    position: relative;
-}
-
-.vertical-tree li {
-    margin: 15px 0;
-    position: relative;
-}
+.vertical-tree ul { list-style: none; padding-left: 25px; position: relative; }
+.vertical-tree li { margin: 12px 0; position: relative; }
 
 /* Connectors */
 .vertical-tree ul::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #e0d5c1;
+    content: ''; position: absolute; left: 10px; top: 0; bottom: 0;
+    width: 1px; background: #ddd;
 }
-
 .vertical-tree li::before {
-    content: '';
-    position: absolute;
-    left: -20px;
-    top: 20px;
-    width: 20px;
-    height: 2px;
-    background: #e0d5c1;
+    content: ''; position: absolute; left: -15px; top: 22px;
+    width: 15px; height: 1px; background: #ddd;
 }
 
-/* Node Styling */
+/* Nodes */
 .v-node {
-    background: var(--white);
-    padding: 12px 20px;
-    border: 1px solid #e0d5c1;
-    border-radius: 8px;
-    display: inline-block;
-    min-width: 200px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.03);
-    transition: 0.3s;
+    background: white; padding: 10px 18px;
+    border: 1px solid #eee; border-radius: 6px;
+    display: inline-block; min-width: 180px; transition: 0.3s;
 }
+.v-node.root { background: var(--gold-grad); color: white; border: none; }
+.v-node.deceased { background: #f9f9f9; color: #bbb; border-style: dashed; }
+.v-node.ggc { background: #fffcf5; border-color: #f1e6d0; font-size: 0.85rem; }
 
-.v-node.root { background: var(--gold-gradient); color: white; border: none; }
-.v-node.deceased { background: #f0f0f0; color: #aaa; border-style: dashed; }
-.v-node.ggc { border-color: #d4bc8e; background: #fffcf5; font-size: 0.9rem; }
-.v-node.missing { opacity: 0.6; font-style: italic; font-size: 0.8rem; }
+.clickable { cursor: pointer; border-left: 4px solid var(--gold); }
+.clickable:hover { background: #fffdf5; transform: translateX(5px); }
 
-.clickable { cursor: pointer; border-left: 4px solid var(--gold); font-weight: 600; }
-.clickable:hover { background: #fdf8e6; transform: translateX(5px); }
+.m-id { display: block; font-size: 0.65rem; color: var(--gold); font-weight: bold; }
+.root .m-id { color: white; opacity: 0.8; }
 
 .count {
-    background: #f3e5ab;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    border-radius: 10px;
-    margin-left: 8px;
-    color: var(--gold);
+    background: #f3e5ab; font-size: 0.7rem; padding: 2px 6px;
+    border-radius: 10px; margin-left: 8px; color: #8a6d3b;
 }
 
-/* Styling for the Member ID tags */
-.m-id {
-    display: block;
-    font-size: 0.7rem;
-    color: var(--gold);
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 2px;
-    opacity: 0.8;
-}
+/* Click-to-Reveal */
+.v-nested { display: none; }
+.v-nested.active { display: block; animation: slideDown 0.3s ease; }
 
-/* White text for IDs on the gold root node */
-.root .m-id {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-/* Subtle IDs for deceased members */
-.deceased .m-id {
-    color: #bbb;
-}
-
-/* Ensure the count bubble stays aligned */
-.count {
-    background: #f3e5ab;
-    font-size: 0.75rem;
-    padding: 2px 8px;
-    border-radius: 12px;
-    margin-left: 10px;
-    color: var(--dark);
-    font-weight: 600;
-    vertical-align: middle;
-}
-/* Click & Reveal logic */
-.v-nested {
-    display: none; /* Hidden by default */
-}
-
-.v-nested.active {
-    display: block;
-    animation: slideIn 0.3s ease-out;
-}
-
-.clickable::after { content: ' +'; float: right; color: var(--gold); }
+.clickable::after { content: ' +'; float: right; color: var(--gold); font-weight: bold; }
 .clickable.expanded::after { content: ' −'; }
 
-@keyframes slideIn {
-    from { opacity: 0; transform: translateY(-10px); }
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-}
-.fade { animation: fade 1.5s; }
+@keyframes fade { from { opacity: 0.5; } to { opacity: 1; } }
+.fade { animation: fade 0.8s; }
 
-footer { background: var(--dark); color: white; text-align: center; padding: 40px; margin-top: 50px; }
+footer { background: var(--dark); color: white; text-align: center; padding: 30px; margin-top: 50px; }
 
 @media (max-width: 600px) {
     .v-node { min-width: 100%; }
-    .slider-container { height: 300px; }
+    .slider-container { aspect-ratio: 4 / 3; }
 }
