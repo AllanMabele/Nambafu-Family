@@ -92,47 +92,89 @@ body {
 
 .nav-bar a:hover { color: var(--gold); }
 
-/* Slider - Fixed Cropping */
-.gallery-section { padding: 80px 20px; background: var(--white); }
+/* --- Professional Slider Section (No Cropping) --- */
+.gallery-section { 
+    padding: 60px 20px; 
+    background: var(--white); 
+}
 
 .slider-wrapper {
     max-width: 1000px;
     margin: auto;
     position: relative;
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow);
+    background: #1a1612; /* Deep dark background makes photos pop */
 }
 
 .slider-container {
-    height: 500px; /* Fixed height for consistency */
-    background: #000;
+    /* Instead of height: 500px, we use aspect-ratio */
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Professional widescreen ratio */
+    display: flex;
+    align-items: center;  /* Centers photo vertically */
+    justify-content: center; /* Centers photo horizontally */
+}
+
+/* On smaller screens, make it a bit taller for mobile photos */
+@media (max-width: 768px) {
+    .slider-container {
+        aspect-ratio: 4 / 3; 
+    }
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: none; /* Controlled by JS */
 }
 
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Prevents cutting off heads/feet */
-    background: #000;
+    /* 'contain' ensures the WHOLE photo is visible without cutting */
+    object-fit: contain; 
+    display: block;
 }
 
 .slider-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.8);
+    background: rgba(255, 255, 255, 0.9);
     border: none;
-    padding: 15px;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
     border-radius: 50%;
-    font-size: 1.2rem;
-    margin: 0 10px;
-    transition: 0.3s;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.slider-btn:hover { background: var(--gold); color: white; }
-.next { right: 0; }
+.slider-btn:hover { 
+    background: var(--gold); 
+    color: white; 
+    transform: translateY(-50%) scale(1.1);
+}
 
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* Add a smooth fade animation */
+.fade {
+    animation: fadeEffect 0.8s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
 /* Vertical Tree - Modern & Clean */
 .tree-section { padding: 80px 20px; max-width: 800px; margin: auto; }
 .section-title { font-family: 'Cinzel', serif; text-align: center; font-size: 2.2rem; margin-bottom: 10px; }
