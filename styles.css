@@ -241,6 +241,38 @@ body {
     color: var(--gold);
 }
 
+/* Styling for the Member ID tags */
+.m-id {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+    opacity: 0.8;
+}
+
+/* White text for IDs on the gold root node */
+.root .m-id {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Subtle IDs for deceased members */
+.deceased .m-id {
+    color: #bbb;
+}
+
+/* Ensure the count bubble stays aligned */
+.count {
+    background: #f3e5ab;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 10px;
+    color: var(--dark);
+    font-weight: 600;
+    vertical-align: middle;
+}
 /* Click & Reveal logic */
 .v-nested {
     display: none; /* Hidden by default */
