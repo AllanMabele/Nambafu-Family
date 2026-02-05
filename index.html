@@ -74,10 +74,10 @@
                         <li class="has-children">
                             <div class="v-node clickable" onclick="toggleVertical(this)">The Late Sons <span class="count">4</span></div>
                             <ul class="v-nested">
-                                <li><div class="v-node deceased"><span class="m-id">C-001</span> Son 1</div></li>
-                                <li><div class="v-node deceased"><span class="m-id">C-002</span> Son 2</div></li>
-                                <li><div class="v-node deceased"><span class="m-id">C-003</span> Son 3</div></li>
-                                <li><div class="v-node deceased"><span class="m-id">C-004</span> Son 4</div></li>
+                                <li><div class="v-node deceased"><span class="m-id">C-001</span> [Deceased Son 1]</div></li>
+                                <li><div class="v-node deceased"><span class="m-id">C-002</span> [Deceased Son 2]</div></li>
+                                <li><div class="v-node deceased"><span class="m-id">C-003</span> [Deceased Son 3]</div></li>
+                                <li><div class="v-node deceased"><span class="m-id">C-004</span> [Deceased Son 4]</div></li>
                             </ul>
                         </li>
 
@@ -89,9 +89,9 @@
                                     <div class="v-node clickable sub" onclick="toggleVertical(this)"><span class="m-id">GC-001</span> Cristine Nabalyo</div>
                                     <ul class="v-nested">
                                         <li><div class="v-node ggc"><span class="m-id">GGC-001</span> Cecilia</div></li>
-                                        <li><div class="v-node ggc"><span class="m-id">GGC-002</span> Douglas</div></li>
-                                        <li><div class="v-node ggc"><span class="m-id">GGC-003</span> Brian</div></li>
-                                        <li><div class="v-node missing">GGC-004 to GGC-007</div></li>
+                                        <li><div class="v-node ggc"><span class="m-id">GGC-001</span> Douglas</div></li>
+                                        <li><div class="v-node ggc"><span class="m-id">GGC-002</span> Brian</div></li>
+                                        <li><div class="v-node missing">Remaining GGC-003 to 007</div></li>
                                     </ul>
                                 </li>
                                 <li class="has-children">
@@ -103,11 +103,14 @@
                                 </li>
                                 <li class="has-children">
                                     <div class="v-node clickable sub" onclick="toggleVertical(this)"><span class="m-id">GC-003</span> Moran Nambafu</div>
-                                    <ul class="v-nested"><li><div class="v-node ggc"><span class="m-id">GGC-015</span> Child</div></li></ul>
+                                    <ul class="v-nested"><li><div class="v-node ggc"><span class="m-id">GGC-015</span> [GGC Name]</div></li></ul>
                                 </li>
                                 <li><div class="v-node"><span class="m-id">GC-004</span> Owen Nambafu</div></li>
-                                <li><div class="v-node"><span class="m-id">GC-005</span> Mercy Ndenu</div></li>
-                                <li><div class="v-node missing"><span class="m-id">GC-006</span> [Name]</div></li>
+                                <li class="has-children">
+                                    <div class="v-node clickable sub" onclick="toggleVertical(this)"><span class="m-id">GC-005</span> Mercy Ndenu</div>
+                                    <ul class="v-nested"><li><div class="v-node ggc"><span class="m-id">GGC-016</span> [GGC Name]</div></li></ul>
+                                </li>
+                                <li><div class="v-node missing"><span class="m-id">GC-006</span> [Input Grandchild Name]</div></li>
                             </ul>
                         </li>
 
@@ -115,27 +118,122 @@
                         <li class="has-children">
                             <div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-006</span> Joseck Mukui <span class="count">10</span></div>
                             <ul class="v-nested">
-                                <li class="has-children"><div class="v-node clickable sub" onclick="toggleVertical(this)"><span class="m-id">GC-007</span> Cyprian Wanyama</div><ul class="v-nested"><li><div class="v-node ggc">GGC-020-023</div></li></ul></li>
-                                <li class="has-children"><div class="v-node clickable sub" onclick="toggleVertical(this)"><span class="m-id">GC-008</span> Maureen Namalwa</div><ul class="v-nested"><li><div class="v-node ggc">GGC-025-029</div></li></ul></li>
-                                <li class="has-children"><div class="v-node clickable sub" onclick="toggleVertical(this)"><span class="m-id">GC-009</span> Pamela Mukui</div><ul class="v-nested"><li><div class="v-node ggc">GGC-032-035</div></li></ul></li>
-                                <li class="has-children"><div class="v-node clickable sub" onclick="toggleVertical(this)"><span class="m-id">GC-010</span> Jacquiline Mukui</div><ul class="v-nested"><li><div class="v-node ggc">GGC-037-040</div></li></ul></li>
+                                <li class="has-children"><div class="v-node clickable sub" onclick="toggleVertical(this)"><span class="m-id">GC-007</span> Cyprian Wanyama</div><ul class="v-nested"><li><div class="v-node ggc"><span class="m-id">GGC-020</span> Hilda</div></li><li><div class="v-node ggc"><span class="m-id">GGC-021</span> Ian</div></li><li><div class="v-node ggc"><span class="m-id">GGC-022</span> Max</div></li><li><div class="v-node ggc"><span class="m-id">GGC-023</span> [GGC Name]</div></li></ul></li>
+                                <li class="has-children"><div class="v-node clickable sub" onclick="toggleVertical(this)"><span class="m-id">GC-008</span> Maureen Namalwa</div><ul class="v-nested"><li><div class="v-node ggc"><span class="m-id">GGC-025</span> Maggy</div></li><li><div class="v-node ggc"><span class="m-id">GGC-026</span> Megan</div></li><li><div class="v-node missing">GGC-027 to 029</div></li></ul></li>
+                                <li class="has-children"><div class="v-node clickable sub" onclick="toggleVertical(this)"><span class="m-id">GC-009</span> Pamela Mukui</div><ul class="v-nested"><li><div class="v-node ggc"><span class="m-id">GGC-032</span> Allan</div></li><li><div class="v-node missing">GGC-033 to 035</div></li></ul></li>
+                                <li class="has-children"><div class="v-node clickable sub" onclick="toggleVertical(this)"><span class="m-id">GC-010</span> Jacquiline Mukui</div><ul class="v-nested"><li><div class="v-node ggc">GGC-037 to 040</div></li></ul></li>
                                 <li><div class="v-node"><span class="m-id">GC-011</span> Coleta Mukui</div></li>
                                 <li><div class="v-node"><span class="m-id">GC-012</span> Derick Mukui</div></li>
                                 <li><div class="v-node"><span class="m-id">GC-013</span> Vivian Mukui</div></li>
                                 <li><div class="v-node"><span class="m-id">GC-014</span> Nora Mukui</div></li>
-                                <li><div class="v-node missing">GC-015, GC-016</div></li>
+                                <li><div class="v-node missing">GC-015, GC-016 [Names]</div></li>
                             </ul>
                         </li>
 
-                        <!-- Other Children -->
-                        <li class="has-children"><div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-007</span> Wycliffe Nambafu <span class="count">5</span></div><ul class="v-nested"><li><div class="v-node">GC-017 to GC-021</div></li></ul></li>
-                        <li class="has-children"><div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-008</span> Ruth Nandutu <span class="count">7</span></div><ul class="v-nested"><li><div class="v-node">GC-022 to GC-028</div></li></ul></li>
-                        <li class="has-children"><div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-009</span> Felisters Musuya <span class="count">5</span></div><ul class="v-nested"><li><div class="v-node">GC-029 to GC-033</div></li></ul></li>
-                        <li class="has-children"><div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-010</span> Judith Mukoya <span class="count">5</span></div><ul class="v-nested"><li><div class="v-node">GC-034 to GC-038</div></li></ul></li>
-                        <li class="has-children"><div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-011</span> Dorcas Nafula <span class="count">5</span></div><ul class="v-nested"><li><div class="v-node">GC-039 to GC-043</div></li></ul></li>
-                        <li class="has-children"><div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-012</span> Emily Nanjala <span class="count">12</span></div><ul class="v-nested"><li><div class="v-node">GC-044 to GC-055</div></li></ul></li>
-                        <li class="has-children"><div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-013</span> Dipina Manakhe <span class="count">9</span></div><ul class="v-nested"><li><div class="v-node">GC-056 to GC-064</div></li></ul></li>
-                        <li class="has-children"><div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-014</span> Catherine Mutua <span class="count">5</span></div><ul class="v-nested"><li><div class="v-node">GC-065 to GC-069</div></li></ul></li>
+                        <!-- Wycliffe Nambafu -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-007</span> Wycliffe Nambafu <span class="count">5</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node"><span class="m-id">GC-017</span> Bethwel Wamalwa</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-018</span> Bethel Wamalwa</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-019</span> Wayne Wamalwa</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-020</span> Zeth Wamalwa</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-021</span> Keith Wamalwa</div></li>
+                            </ul>
+                        </li>
+
+                        <!-- Ruth Nandutu -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-008</span> Ruth Nandutu <span class="count">7</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node"><span class="m-id">GC-022</span> Shila Makokha</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-023</span> Erick Makokha</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-024</span> Faustine Makokha</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-025</span> Jesca Makokha</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-026</span> Godfrey Makokha</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-027</span> Anna Makokha</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-028</span> Diana Makokha</div></li>
+                            </ul>
+                        </li>
+
+                        <!-- Felisters Musuya -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-009</span> Felisters Musuya <span class="count">5</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node"><span class="m-id">GC-029</span> Lilian Munoko</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-030</span> Lucy Munoko</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-031</span> Linnet Munoko</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-032</span> Victor Munoko</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-033</span> Linda Munoko</div></li>
+                            </ul>
+                        </li>
+
+                        <!-- Judith Mukoya -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-010</span> Judith Mukoya <span class="count">5</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node"><span class="m-id">GC-034</span> Cristine Namarome</div></li>
+                                <li class="has-children">
+                                    <div class="v-node clickable sub" onclick="toggleVertical(this)"><span class="m-id">GC-035</span> Isaac Wasike</div>
+                                    <ul class="v-nested"><li><div class="v-node ggc"> Kayla</div></li></ul>
+                                </li>
+                                <li><div class="v-node"><span class="m-id">GC-036</span> Kennedy Wafula</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-037</span> Silas Wafula</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-038</span> Susan Wafula</div></li>
+                            </ul>
+                        </li>
+
+                        <!-- Dorcas Nafula -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-011</span> Dorcas Nafula <span class="count">5</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node"><span class="m-id">GC-039</span> Abby Mutekhele</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-040</span> Fidelis Mutekhele</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-041</span> Serapine Mutekhele</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-042</span> Nancy Mutekhele</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-043</span> Maret Mutekhele</div></li>
+                            </ul>
+                        </li>
+
+                        <!-- Emily Nanjala -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-012</span> Emily Nanjala <span class="count">12</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node"><span class="m-id">GC-044</span> Brian Sichangi</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-045</span> Bramwel Sichangi</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-046</span> Abiud Sichangi</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-047</span> Lucas Wasike</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-048</span> Josep Sichangi</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-049</span> Diana Sichangi</div></li>
+                                <li><div class="v-node missing">Remaining GC-050 to GC-055</div></li>
+                            </ul>
+                        </li>
+
+                        <!-- Dipina Manakhe -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-013</span> Dipina Manakhe <span class="count">9</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node"><span class="m-id">GC-056</span> Annet Wakaanya</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-057</span> Vyona</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-058</span> Ivvon</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-059</span> Susan</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-060</span> Vallary</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-061</span> Diana</div></li>
+                                <li><div class="v-node missing">Remaining GC-062 to GC-064</div></li>
+                            </ul>
+                        </li>
+
+                        <!-- Catherine Mutua -->
+                        <li class="has-children">
+                            <div class="v-node clickable" onclick="toggleVertical(this)"><span class="m-id">C-014</span> Catherine Mutua <span class="count">5</span></div>
+                            <ul class="v-nested">
+                                <li><div class="v-node"><span class="m-id">GC-065</span> Pascal Nabayukha</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-066</span> Victor Nabayukha</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-067</span> Brandon Nabayukha</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-068</span> Brian Nabayukha</div></li>
+                                <li><div class="v-node"><span class="m-id">GC-069</span> Diana Nabayukha</div></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -147,7 +245,6 @@
     </footer>
 
     <script>
-        // Fix for Tree: Correct selector for nested list
         function toggleVertical(element) {
             const parentLi = element.parentElement;
             const nestedUl = parentLi.querySelector('.v-nested');
@@ -157,7 +254,6 @@
             }
         }
 
-        // Fix for Slider: Added start index and initialization
         let slideIndex = 0;
         const slides = document.getElementsByClassName("slide");
         
@@ -179,7 +275,6 @@
             showSlides();
         }
 
-        // Initialize slider on load
         window.onload = function() {
             showSlides();
             setInterval(() => { slideIndex++; showSlides(); }, 5000);
